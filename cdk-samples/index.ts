@@ -1,16 +1,12 @@
-import * as cdk from 'aws-cdk-lib';
 import ecs = require('aws-cdk-lib/aws-ecs');
 import ecs_patterns = require('aws-cdk-lib/aws-ecs-patterns');
 import ec2 = require('aws-cdk-lib/aws-ec2');
+import cdk = require('aws-cdk-lib');
 
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
-
-export class CdkSamplesStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+class AutoScalingFargateService extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
     // Create a cluster
     const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 2 });
     const cluster = new ecs.Cluster(this, 'fargate-service-autoscaling', { vpc });
@@ -32,10 +28,11 @@ export class CdkSamplesStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'LoadBalancerDNS', { value: fargateService.loadBalancer.loadBalancerDnsName });
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkSamplesQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
   }
 }
+
+const app = new cdk.App();
+
+new AutoScalingFargateService(app, 'aws-fargate-application-autoscaling');
+
+app.synth();

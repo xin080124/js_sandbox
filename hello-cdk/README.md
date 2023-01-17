@@ -52,9 +52,6 @@ export class HelloCdkStack extends cdk.Stack {
 }
 ```
 
-
-
-
 ### Synthesize an AWS CloudFormation template
 ```
 cdk synth
