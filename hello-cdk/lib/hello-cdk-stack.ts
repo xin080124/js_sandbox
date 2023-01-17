@@ -9,7 +9,9 @@ export class HelloCdkStack extends cdk.Stack {
 
     // The code that defines your stack goes here
     new s3.Bucket(this, 'nancycdkbucket', {
-      versioned: true
+      versioned: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true
     });
 
     // example resource
