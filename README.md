@@ -5,3 +5,8 @@
 npm install @aws-sdk/client-s3
 node aws_sdk.js
 ```
+
+### for aws_cdk:
+```
+enter hello-cdk folder
+```
