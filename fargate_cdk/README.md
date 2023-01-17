@@ -18,7 +18,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 ## Add cdk code
 
 ### Add fargate resource
-* copy from `https://github.com/aws-samples/aws-cdk-examples/blob/master/typescript/ecs/fargate-service-with-auto-scaling/index.ts`
+- [aws cdk examples---fargate-service-with-auto-scaling](https://github.com/aws-samples/aws-cdk-examples/blob/master/typescript/ecs/fargate-service-with-auto-scaling/index.ts)
 ```
 (example)
 // Create a cluster
