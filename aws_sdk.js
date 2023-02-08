@@ -23,7 +23,7 @@ nodes3_createbucket.js
 
 // // Set the bucket parameters.
 
-// export const bucketParams = { Bucket: "nancysdkbucket1" };
+export const bucketParams = { Bucket: "nancysdkbucket0208" };
 
 // // Create the Amazon S3 bucket.
 // export const run = async () => {
