@@ -15,4 +15,5 @@ enter hello-cdk folder
 ### mark:
 ```
 230118 run sdk
+230208 run sdk
 ```
